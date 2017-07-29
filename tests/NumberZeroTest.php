@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace tspencer244\NumberZero\Tests;
 
-use tspencer244\NumberZero\NumberZero;
-use tspencer244\NumberZero\Exception\NumberNotZeroException;
+use tspencer244\NumberZero\ {
+    Exception\NumberNotZeroException,
+    NumberZero
+};
 use PHPUnit\Framework\TestCase;
 
 final class NumberZeroTest extends TestCase
@@ -27,5 +29,11 @@ final class NumberZeroTest extends TestCase
         $zero = new NumberZero();
         $this->expectException(NumberNotZeroException::class);
         $zero->setNumber(1);
+    }
+
+    public function testInvokingInstanceEqualsZero()
+    {
+        $zero = new NumberZero();
+        $this->assertEquals(0, $zero());
     }
 }

@@ -26,6 +26,14 @@ final class NumberZero extends NumberProvider
         $this->setNumber($number);
     }
 
+    /**
+     * @return int
+     */
+    public function __invoke(): int
+    {
+        return $this->number;
+    }
+
     public function getNumber(): int
     {
         return $this->number;
