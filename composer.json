@@ -2,7 +2,7 @@
   "name": "tspencer244/NumberZero",
   "description": "A concrete implementation of the number zero.",
   "minimum-stability": "stable",
-  "license": "proprietary",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Thomas Spencer",
@@ -13,7 +13,7 @@
     "php": "^7.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "6.2.3"
+    "phpunit/phpunit": "^6.2"
   },
   "autoload": {
     "psr-4": {
