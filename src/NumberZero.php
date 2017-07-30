@@ -41,6 +41,7 @@ final class NumberZero extends NumberProvider
 
     /**
      * @param int $number
+     * @throws NumberNotZeroException
      */
     public function setNumber(int $number)
     {
