@@ -4,14 +4,10 @@ sudo: false
 
 php:
   - 7.0
-  - 7.0snapshot
-  - 7.1
-  - 7.1snapshot
-  - master
 
 env:
   global:
-    - DEFAULT_COMPOSER_FLAGS="--no-progress --no-suggest --ansi"
+    - DEFAULT_COMPOSER_FLAGS="--ansi --no-interaction --no-progress --no-suggest"
 
 before_install:
   - composer self-update
