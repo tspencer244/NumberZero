@@ -11,20 +11,14 @@ php:
 
 env:
   global:
-    - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-ansi --no-progress --no-suggest"
+    - DEFAULT_COMPOSER_FLAGS="--no-progress --no-suggest --ansi"
 
 before_install:
   - composer self-update
   - composer clear-cache
+  - composer install --require-dev
 
-script: phpunit
-
-before_script:
-  - echo 'zend.assertions=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - echo 'assert.exception=On' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-
-script:
-  - phpunit
+script: ./vendor/bin/phpunit
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
